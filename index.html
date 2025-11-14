@@ -1,4 +1,94 @@
-<section class="gallery-section">
-    <h2 data-lang data-tr="Galeri" data-en="Gallery">Galeri</h2>
-    <div id="gallery" class="gallery-grid"></div>
-</section>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dorbeautybar | Güzellik Salonu Ankara</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img src="images/logo.png" class="logo" alt="Dorbeautybar Logo">
+
+        <nav>
+            <a href="#services">Hizmetler</a>
+            <a href="#gallery">Galeri</a>
+            <a href="#about">Hakkında</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Dorbeautybar</h1>
+        <p>Protez Tırnak | Manikür | Pedikür | Kirpik Lifting</p>
+        <a class="btn" href="https://wa.me/905368673670" target="_blank">WhatsApp ile Randevu Al</a>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <h2>Hizmetler</h2>
+
+        <div class="service-list">
+            <div class="service">Protez Tırnak</div>
+            <div class="service">Manikür</div>
+            <div class="service">Pedikür</div>
+            <div class="service">Kirpik Lifting</div>
+            <div class="service">Kalıcı Oje</div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery">
+        <h2>Galeri</h2>
+
+        <div id="gallery-grid" class="gallery-grid">
+            <!-- Fotoğraflar script.js ile otomatik yükleniyor -->
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>Hakkında</h2>
+
+        <p>
+            Protez Tırnak Esat<br>
+            Protez tırnak | Pedikür | Kirpik lifting<br>
+            Steril edilmiş ürünler<br>
+            Patili dostlarınızla da hoş geldiniz 🐾
+        </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2>İletişim</h2>
+
+        <p><strong>Adres:</strong> 100. Yıl Mahallesi, Hülya Sokak 1/D, Çankaya / Ankara</p>
+        <p><strong>Telefon:</strong> <a href="tel:05368673670">0536 867 36 70</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/dorbeautybar" target="_blank">@dorbeautybar</a></p>
+
+        <a class="btn" href="https://wa.me/905368673670" target="_blank">WhatsApp ile Randevu</a>
+
+        <!-- MAP -->
+        <iframe 
+            src="https://www.google.com/maps?q=100.+Y%C4%B1l+Mahallesi+H%C3%BClya+Sokak+1%2FD+%C3%87ankaya+Ankara&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; border-radius:15px; margin-top:20px;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
