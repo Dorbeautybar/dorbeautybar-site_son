@@ -1,30 +1,23 @@
-// --- DİL SEÇİMİ ---
-function changeLanguage(lang) {
-    document.querySelectorAll("[data-lang]").forEach(el => {
-        el.textContent = el.getAttribute("data-" + lang);
-    });
-}
-
-// --- OTOMATİK GALERİ ---
 document.addEventListener("DOMContentLoaded", () => {
-    const gallery = document.getElementById("gallery");
+    const gallery = document.getElementById("gallery-grid");
 
-    // Burada images klasöründeki bilinen fotoğraf uzantılarını kontrol ediyoruz
-    const extensions = ["jpg", "jpeg", "png", "webp"];
-    const totalImages = 200; // maksimum kontrol sayısı (yeterli)
+    // Desteklenen resim formatları
+    const formats = ["jpg", "jpeg", "png", "webp"];
+    const maxImages = 200;
 
-    for (let i = 1; i <= totalImages; i++) {
-        for (let ext of extensions) {
+    // images klasöründeki fotoğrafları kontrol et
+    for (let i = 1; i <= maxImages; i++) {
+        formats.forEach(ext => {
             const imgPath = `images/${i}.${ext}`;
             const img = new Image();
             img.src = imgPath;
 
             img.onload = () => {
-                const imgElement = document.createElement("img");
-                imgElement.src = imgPath;
-                imgElement.alt = "Galeri Fotoğrafı";
-                gallery.appendChild(imgElement);
+                const el = document.createElement("img");
+                el.src = imgPath;
+                el.alt = "Galeri";
+                gallery.appendChild(el);
             };
-        }
+        });
     }
 });
