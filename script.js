@@ -1,1 +1,30 @@
-const btn=document.getElementById('langBtn');let current='tr';btn.addEventListener('click',()=>{current=current==='tr'?'en':'tr';btn.textContent=current==='tr'?'ENGLISH':'TÜRKÇE';if(current==='tr')location.reload();else{document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');});document.title='Dorbeautybar | Beauty Salon Ankara';document.querySelector('.hero-welcome').textContent='Welcome to Dorbeautybar — Where beauty meets elegance';document.querySelector('.hero-sub').textContent='Get the nails you dream of in a hygienic and cozy environment.'}});document.getElementById('year').textContent=new Date().getFullYear();
+// --- DİL SEÇİMİ ---
+function changeLanguage(lang) {
+    document.querySelectorAll("[data-lang]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+    });
+}
+
+// --- OTOMATİK GALERİ ---
+document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.getElementById("gallery");
+
+    // Burada images klasöründeki bilinen fotoğraf uzantılarını kontrol ediyoruz
+    const extensions = ["jpg", "jpeg", "png", "webp"];
+    const totalImages = 200; // maksimum kontrol sayısı (yeterli)
+
+    for (let i = 1; i <= totalImages; i++) {
+        for (let ext of extensions) {
+            const imgPath = `images/${i}.${ext}`;
+            const img = new Image();
+            img.src = imgPath;
+
+            img.onload = () => {
+                const imgElement = document.createElement("img");
+                imgElement.src = imgPath;
+                imgElement.alt = "Galeri Fotoğrafı";
+                gallery.appendChild(imgElement);
+            };
+        }
+    }
+});
